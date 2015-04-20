@@ -107,7 +107,6 @@
 
   function bindEvents(autoHidingNavbar) {
     $document.on('scroll.' + pluginName, function() {
-      alert('HOLY ROTATING SCREENS BATMAN: 000');
       if (new Date().getTime() - _lastScrollHandlerRun > _throttleDelay) {
         scrollHandler(autoHidingNavbar);
       }
@@ -120,33 +119,30 @@
     });
 
     $window.on('resize.' + pluginName, function() {
-      alert('HOLY ROTATING SCREENS BATMAN: 111');
+      hide(autoHidingNavbar);
       clearTimeout(_resizeThrottleTimer);
       _resizeThrottleTimer = setTimeout(function() {
         _windowHeight = $window.height();
-      }, _throttleDelay);
-      hide(autoHidingNavbar);
-      show(autoHidingNavbar);
+        show(autoHidingNavbar);
+      }, 2000);
     });
     
     $window.on('orientationchange.' + pluginName, function() {
-      alert('HOLY ROTATING SCREENS BATMAN: 222');
+      hide(autoHidingNavbar);
       clearTimeout(_resizeThrottleTimer);
       _resizeThrottleTimer = setTimeout(function() {
         _windowHeight = $window.height();
-      }, _throttleDelay);
-      hide(autoHidingNavbar);
-      show(autoHidingNavbar);
+        show(autoHidingNavbar);
+      }, 2000);
     });    
     
     $window.on('orientationchange', function() {
-      alert('HOLY ROTATING SCREENS BATMAN: 333');
+      hide(autoHidingNavbar);
       clearTimeout(_resizeThrottleTimer);
       _resizeThrottleTimer = setTimeout(function() {
         _windowHeight = $window.height();
-      }, _throttleDelay);
-      hide(autoHidingNavbar);
-      show(autoHidingNavbar);
+        show(autoHidingNavbar);
+      }, 2000);
     });
   }
 
