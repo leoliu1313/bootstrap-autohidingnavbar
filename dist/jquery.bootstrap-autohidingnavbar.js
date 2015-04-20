@@ -124,6 +124,14 @@
         _windowHeight = $window.height();
       }, _throttleDelay);
     });
+    
+    
+    $window.on('orientationchange.' + pluginName, function() {
+      clearTimeout(_resizeThrottleTimer);
+      _resizeThrottleTimer = setTimeout(function() {
+        _windowHeight = $window.height();
+      }, _throttleDelay);
+    });
   }
 
   function unbindEvents() {
