@@ -107,6 +107,7 @@
 
   function bindEvents(autoHidingNavbar) {
     $document.on('scroll.' + pluginName, function() {
+      alert('HOLY ROTATING SCREENS BATMAN: 000');
       if (new Date().getTime() - _lastScrollHandlerRun > _throttleDelay) {
         scrollHandler(autoHidingNavbar);
       }
