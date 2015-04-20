@@ -125,6 +125,8 @@
       _resizeThrottleTimer = setTimeout(function() {
         _windowHeight = $window.height();
       }, _throttleDelay);
+      hide(autoHidingNavbar);
+      show(autoHidingNavbar);
     });
     
     $window.on('orientationchange.' + pluginName, function() {
@@ -133,6 +135,8 @@
       _resizeThrottleTimer = setTimeout(function() {
         _windowHeight = $window.height();
       }, _throttleDelay);
+      hide(autoHidingNavbar);
+      show(autoHidingNavbar);
     });    
     
     $window.on('orientationchange', function() {
@@ -141,6 +145,8 @@
       _resizeThrottleTimer = setTimeout(function() {
         _windowHeight = $window.height();
       }, _throttleDelay);
+      hide(autoHidingNavbar);
+      show(autoHidingNavbar);
     });
   }
 
