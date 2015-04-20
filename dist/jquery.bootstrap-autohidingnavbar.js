@@ -119,14 +119,23 @@
     });
 
     $window.on('resize.' + pluginName, function() {
+      alert('HOLY ROTATING SCREENS BATMAN: 111');
       clearTimeout(_resizeThrottleTimer);
       _resizeThrottleTimer = setTimeout(function() {
         _windowHeight = $window.height();
       }, _throttleDelay);
     });
     
-    
     $window.on('orientationchange.' + pluginName, function() {
+      alert('HOLY ROTATING SCREENS BATMAN: 222');
+      clearTimeout(_resizeThrottleTimer);
+      _resizeThrottleTimer = setTimeout(function() {
+        _windowHeight = $window.height();
+      }, _throttleDelay);
+    });    
+    
+    $window.on('orientationchange', function() {
+      alert('HOLY ROTATING SCREENS BATMAN: 333');
       clearTimeout(_resizeThrottleTimer);
       _resizeThrottleTimer = setTimeout(function() {
         _windowHeight = $window.height();
