@@ -119,12 +119,7 @@
     });
 
     $window.on('resize.' + pluginName, function() {
-      hide(autoHidingNavbar);
-      clearTimeout(_resizeThrottleTimer);
-      _resizeThrottleTimer = setTimeout(function() {
-        _windowHeight = $window.height();
-        show(autoHidingNavbar);
-      }, 2000);
+      _windowHeight = $window.height();
     });
     
     $window.on('orientationchange.' + pluginName, function() {
